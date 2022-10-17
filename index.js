@@ -1,7 +1,11 @@
 function fetchBooks() {
-  // To pass the tests, don't forget to return your fetch!
-  
-}
+  // To pass the tests, don't forget to return your fetch!\
+  return fetch("https://anapioficeandfire.com/api/books")
+  .then((resp) => resp.json())
+  .then((json) => renderBooks(json)); 
+  //.then((json) => console.log(`Entry number ${int} is the book: "${json[int].name}"`)) 
+
+}  
 
 function renderBooks(books) {
   const main = document.querySelector('main');
